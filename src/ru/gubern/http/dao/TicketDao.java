@@ -1,11 +1,11 @@
 package ru.gubern.http.dao;
 
-import org.checkerframework.checker.units.qual.A;
-import ru.gubern.http.entity.Flight;
 import ru.gubern.http.entity.Ticket;
 import ru.gubern.http.util.ConnectionManager;
 
-import java.sql.*;
+import java.math.BigDecimal;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -48,7 +48,7 @@ public class TicketDao implements Dao<Long, Ticket> {
                 resultSet.getObject("passenger_name", String.class),
                 resultSet.getObject("flight_id", Long.class),
                 resultSet.getObject("seat_no", String.class),
-                resultSet.getObject("cost", Integer.class));
+                resultSet.getObject("cost", BigDecimal.class));
     }
 
     public static TicketDao getInstance(){

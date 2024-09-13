@@ -19,7 +19,7 @@ public class TicketService {
         return INSTANCE;
     }
 
-    public List<TicketDto> getAll(){
+    public List<TicketDto>getAll(){
         return ticketDao.findAll().stream()
                 .map(ticket -> TicketDto.builder()
                         .id(ticket.getId())
@@ -32,7 +32,7 @@ public class TicketService {
     }
 
     public List<TicketDto> getAllById(Long id) throws SQLException {
-        return ticketDao.findAll().stream()
+        return ticketDao.findAllByFlightId(id).stream()
                 .map(ticket -> TicketDto.builder()
                         .id(ticket.getId())
                         .description("""

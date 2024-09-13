@@ -2,6 +2,7 @@ package ru.gubern.http.entity;
 
 import lombok.*;
 
+import java.math.BigDecimal;
 import java.util.Objects;
 
 @Getter
@@ -14,9 +15,9 @@ public class Ticket {
     private String passenger_name;
     private Long flight_id;
     private String seat_no;
-    private Integer cost;
+    private BigDecimal cost;
 
-    public Ticket(Long id, String passenger_no, String passenger_name, Long flight_id, String seat_no, Integer cost) {
+    public Ticket(Long id, String passenger_no, String passenger_name, Long flight_id, String seat_no, BigDecimal cost) {
         this.id = id;
         this.passenger_no = passenger_no;
         this.passenger_name = passenger_name;
